@@ -2,7 +2,7 @@ import "./App.css";
 import React, { Component } from "react";
 import CityForm from "./components/CityForm";
 import axios from "axios";
-import header from "./components/header";
+import Header from "./components/Header";
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +41,7 @@ export class App extends Component {
   render() {
     return (
       <div className="app-div">
-        <header />
+        <Header />
         <CityForm submitForm={this.submitForm} />
         <div>
           {this.state.showResult && (

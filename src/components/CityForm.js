@@ -13,7 +13,7 @@ class CityForm extends Component {
           <Form.Label>City Name</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter city name   example: Amman"
+            placeholder="Enter city name, example: Amman"
             name="cityName"
           />
         </Form.Group>
@@ -21,7 +21,7 @@ class CityForm extends Component {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Show Map" name="showMap" />
         </Form.Group>
-        <Button variant="info" type="submit">
+        <Button variant="dark" type="submit">
           Explor
         </Button>
       </Form>
