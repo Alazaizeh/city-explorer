@@ -21,7 +21,8 @@ Debloyed using netlify and git and github for virsion controll.
 - 04-07-2021 04:10pm - Finished the #1 feature, the user has the ability to fill a form. 
 - 04-07-2021 04:30pm - Finished the #2 feature, the application call the api server and receive response and render the result in DOM. 
 - 04-07-2021 05:00pm - Finished the #3 feature, the application call the api server and receive the map image and render it. 
-- 04-07-2021 05:10pm - Application now has a been dyployed to netlify.
+- 04-07-2021 05:10pm - Finished the #4 feature, the application is now responsive. 
+- 04-07-2021 05:20pm - Application now has a been dyployed to netlify.
 - 04-07-2021 05:40pm - Added CSS styles to the application.
 - 04-07-2021 05:40pm - Application now has a fully-functional express server, with a GET route for the location resource.
 
@@ -69,4 +70,17 @@ Start time: 04:30
 Finish time: 05:00
 
 Actual time needed to complete: 30 minutes
+```
+### Feature #4: Responsiveness.
+
+```
+Number and name of feature: #4 Responsiveness. 
+
+Estimate of time needed to complete: 20 minutes
+
+Start time: 04:00
+
+Finish time: 04:10
+
+Actual time needed to complete: 10 minutes
 ```
