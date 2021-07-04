@@ -1,6 +1,5 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Badge } from "react-bootstrap";
 function Header() {
   return (
     <div className="header">
