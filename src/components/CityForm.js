@@ -2,9 +2,15 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, Button } from "react-bootstrap";
 class CityForm extends Component {
+  /**
+   *
+   * @param {Event} e
+   */
   submitForm = (e) => {
     e.preventDefault();
-    this.props.submitForm(e);
+    if (e.target.cityName.value !== "") {
+      this.props.submitForm(e);
+    }
   };
   render() {
     return (
@@ -17,7 +23,6 @@ class CityForm extends Component {
             name="cityName"
           />
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Show Map" name="showMap" />
         </Form.Group>

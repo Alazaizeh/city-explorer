@@ -21,21 +21,29 @@ export class App extends Component {
     // let cityName = e.target.cityName.value;
     // let showMap = e.target.showMap.checked;
     let url = `https://eu1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${e.target.cityName.value}&format=json`;
-    let resultData = await axios.get(url);
-    this.setState({
-      showResult: true,
-      result: resultData.data[0].display_name,
-      lon: resultData.data[0].lon,
-      lat: resultData.data[0].lat,
-    });
+    // let resultData = await axios.get(url);
 
-    if (e.target.showMap.checked) {
-      this.setState({
-        showMap: true,
-        mapSrc: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${resultData.data[0].lat},${resultData.data[0].lon}&zoom=16&size=1200x700`,
-        // &format=<format>&maptype=<MapType>&markers=icon:<icon>|<latitude>,<longitude>&markers=icon:<icon>|<latitude>,<longitude>`,
+    axios
+      .get(url)
+      .then((resultData) => {
+        this.setState({
+          showResult: true,
+          result: resultData.data[0].display_name,
+          lon: resultData.data[0].lon,
+          lat: resultData.data[0].lat,
+        });
+
+        if (e.target.showMap.checked) {
+          this.setState({
+            showMap: true,
+            mapSrc: `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${resultData.data[0].lat},${resultData.data[0].lon}&zoom=16&size=1200x700`,
+            // &format=<format>&maptype=<MapType>&markers=icon:<icon>|<latitude>,<longitude>&markers=icon:<icon>|<latitude>,<longitude>`,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
       });
-    }
   };
   render() {
     return (
