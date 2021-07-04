@@ -22,7 +22,6 @@ export class App extends Component {
     // let showMap = e.target.showMap.checked;
     let url = `https://eu1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${e.target.cityName.value}&format=json`;
     let resultData = await axios.get(url);
-    console.log(resultData.data[0]);
     this.setState({
       showResult: true,
       result: resultData.data[0].display_name,
