@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #20282b !important;
+  background-color: #1f272a !important;
   background-image: url("assets/78792.jpg") !important;
   background-size: cover;
   background-repeat: no-repeat;
@@ -16,11 +16,12 @@ body {
 .form {
   color: black;
   background-color: #eee;
-  padding: 10px;
+  padding: 20px;
   display: block;
   width: 75%;
   margin: 50px auto;
   font-weight: bold;
+  border-radius: 15px;
 }
 .form .form-label {
   font-size: 32px !important;
@@ -61,4 +62,19 @@ body {
   height: 90px;
   display: inline-block;
   padding: 0 10px 14px;
+}
+
+@media (max-width: 500px) {
+  .header h1 {
+    font-size: 31px;
+  }
+  .form .form-label {
+    font-size: 20px !important;
+  }
+  .result-div h1 {
+    font-size: 20px !important;
+  }
+  .result-div h2 {
+    font-size: 15px !important;
+  }
 }
