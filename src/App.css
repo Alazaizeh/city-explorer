@@ -18,7 +18,7 @@ body {
   background-color: #eee;
   padding: 10px;
   display: block;
-  width: 1000px;
+  width: 75%;
   margin: 50px auto;
   font-weight: bold;
 }
@@ -29,11 +29,12 @@ body {
   color: black;
   background-color: #fff;
   /* padding: 20px; */
-  width: 1000px;
+  width: 75%;
   margin: 50px auto 50px;
+  text-align: center;
 }
 .result-div img {
-  width: 960px;
+  width: 100%;
   border: 1px solid #000;
   /* border: 1px solid #17a2b8; */
 }
