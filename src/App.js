@@ -48,7 +48,7 @@ export class App extends Component {
         });
         axios
           .get(
-            `${process.env.REACT_APP_WEATHER_LINK}/weather?searchQuery=${e.target.cityName.value}&lat=${resultData.data[0].lat}&lon=${resultData.data[0].lon}`
+            `https://city-expl0rer.herokuapp.com/weather?searchQuery=${e.target.cityName.value}&lat=${resultData.data[0].lat}&lon=${resultData.data[0].lon}`
           )
           .then((resultData) => {
             if (resultData.data !== "NOT FOUND") {
