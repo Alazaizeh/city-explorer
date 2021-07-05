@@ -23,9 +23,6 @@ class CityForm extends Component {
             name="cityName"
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Show Map" name="showMap" />
-        </Form.Group>
         <Button variant="dark" type="submit">
           Explor
         </Button>
