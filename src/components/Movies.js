@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button } from "react-bootstrap";
 class Movies extends Component {
   changeIMG = () => {
     return "https://via.placeholder.com/288";
@@ -10,11 +9,12 @@ class Movies extends Component {
     return (
       <div className="movies-div">
         {this.props.movie.map((mov, index) => {
-          if (mov.overview == "") {
-            return <></>;
+          if (mov.overview === "") {
+            return <React.Fragment key={index}></React.Fragment>;
           } else {
             return (
               <Card
+                key={index}
                 style={{
                   width: "18rem",
                   display: "inline-block",
