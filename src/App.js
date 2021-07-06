@@ -52,7 +52,6 @@ export class App extends Component {
             `https://city-expl0rer.herokuapp.com/weather?city=${e.target.cityName.value}&lat=${resultData.data[0].lat}&lon=${resultData.data[0].lon}`
           )
           .then((resultData) => {
-            console.log(resultData.data);
             this.setState({
               weatherResult: <Weather city={resultData.data} />,
             });
@@ -67,7 +66,6 @@ export class App extends Component {
             `https://city-expl0rer.herokuapp.com/movies?city=${e.target.cityName.value}`
           )
           .then((resultData) => {
-            console.log(resultData.data);
             this.setState({
               moviesResult: <Movies movie={resultData.data} />,
             });
