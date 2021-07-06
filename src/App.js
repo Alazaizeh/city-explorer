@@ -5,6 +5,7 @@ import axios from "axios";
 import Header from "./components/Header";
 import Weather from "./components/Weather";
 import ErrorAlert from "./components/ErrorAlert";
+import Movies from "./components/Movies";
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -17,12 +18,12 @@ export class App extends Component {
       lon: 0,
       lat: 0,
       weatherResult: null,
+      moviesResult: null,
       showError: false,
     };
   }
 
   hideAlert = () => {
-    console.log("close me");
     this.setState({
       showError: false,
     });
@@ -48,18 +49,32 @@ export class App extends Component {
         });
         axios
           .get(
-            `https://city-expl0rer.herokuapp.com/weather?searchQuery=${e.target.cityName.value}&lat=${resultData.data[0].lat}&lon=${resultData.data[0].lon}`
+            `https://city-expl0rer.herokuapp.com/weather?city=${e.target.cityName.value}&lat=${resultData.data[0].lat}&lon=${resultData.data[0].lon}`
           )
           .then((resultData) => {
-            if (resultData.data !== "NOT FOUND") {
-              this.setState({
-                weatherResult: <Weather city={resultData.data} />,
-              });
-            }
+            console.log(resultData.data);
+            this.setState({
+              weatherResult: <Weather city={resultData.data} />,
+            });
           })
           .catch((error) => {
             this.setState({
               weatherResult: <></>,
+            });
+          });
+        axios
+          .get(
+            `https://city-expl0rer.herokuapp.com/movies?city=${e.target.cityName.value}`
+          )
+          .then((resultData) => {
+            console.log(resultData.data);
+            this.setState({
+              moviesResult: <Movies movie={resultData.data} />,
+            });
+          })
+          .catch((error) => {
+            this.setState({
+              moviesResult: <></>,
             });
           });
       })
@@ -86,6 +101,7 @@ export class App extends Component {
           <div className="result-div">
             {this.state.showMap && <img alt="map" src={this.state.mapSrc} />}
           </div>
+          {this.state.moviesResult}
         </div>
       </div>
     );
