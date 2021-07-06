@@ -5,15 +5,8 @@ class Weather extends Component {
     return (
       <div className="weather-div">
         <div>
-          {this.props.city.map((ele, index) => {
-            return (
-              <div key={index}>
-                Day : {ele.date}
-                {<br />}
-                Weather : {ele.description}
-              </div>
-            );
-          })}
+          <div>Weather : {this.props.city.description}</div>
+          <div>Day : {this.props.city.date}</div>
         </div>
       </div>
     );

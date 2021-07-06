@@ -91,3 +91,19 @@ body {
     font-size: 15px !important;
   }
 }
+
+.movies-div {
+  width: 75%;
+  margin: 50px auto 50px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #eee;
+  padding-bottom: 50px;
+}
+.movies-div > div {
+  margin: 50px 0 0 0;
+}
