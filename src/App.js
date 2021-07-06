@@ -49,7 +49,7 @@ export class App extends Component {
         });
         axios
           .get(
-            `http://localhost:3002/weather?city=${e.target.cityName.value}&lat=${resultData.data[0].lat}&lon=${resultData.data[0].lon}`
+            `https://city-expl0rer.herokuapp.com/weather?city=${e.target.cityName.value}&lat=${resultData.data[0].lat}&lon=${resultData.data[0].lon}`
           )
           .then((resultData) => {
             console.log(resultData.data);
@@ -63,7 +63,9 @@ export class App extends Component {
             });
           });
         axios
-          .get(`http://localhost:3002/movies?city=${e.target.cityName.value}`)
+          .get(
+            `https://city-expl0rer.herokuapp.com/movies?city=${e.target.cityName.value}`
+          )
           .then((resultData) => {
             console.log(resultData.data);
             this.setState({
