@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-
+import WeatherDay from "./WeatherDay";
 class Weather extends Component {
   render() {
     return (
-      <div className="weather-div">
-        <div>
-          <div>Weather : {this.props.city.description}</div>
-          <div>Day : {this.props.city.date}</div>
-        </div>
+      <div style={{ color: "black" }} className="weather-div">
+        <h1>Weather</h1>
+        <br />
+        {this.props.city.map((day, index) => (
+          <WeatherDay key={index} city={day} />
+        ))}
       </div>
     );
   }
