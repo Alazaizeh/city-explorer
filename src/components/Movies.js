@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 class Movies extends Component {
   changeIMG = () => {
-    return "https://via.placeholder.com/288";
+    return "https://img.whaleshares.io/wls-img/einstei1/d765e65f432e7e6f0d062616d19364ecdc5631da.png";
   };
   render() {
     return (
