@@ -31,8 +31,6 @@ export class App extends Component {
 
   submitForm = async (e) => {
     let url = `https://eu1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${e.target.cityName.value}&format=json`;
-    // let resultData = await axios.get(url);
-
     axios
       .get(url)
       .then((resultData) => {
@@ -59,6 +57,7 @@ export class App extends Component {
           .catch((error) => {
             this.setState({
               weatherResult: <></>,
+              showError: true,
             });
           });
         axios
@@ -73,6 +72,7 @@ export class App extends Component {
           .catch((error) => {
             this.setState({
               moviesResult: <></>,
+              showError: true,
             });
           });
       })
